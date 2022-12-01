@@ -8,11 +8,13 @@ namespace AoC2022.script
 {
     class Day1
     {
+        private List<List<int>> listElfe;
+        List<int> listPoids;
 
-        public static int part1(string addr)
+        public Day1(string addr)
         {
-            if (!File.Exists(addr)) return -1;
-            List<List<int>> listElfe = new List<List<int>>
+            if (!File.Exists(addr)) this.listElfe = null;
+            this.listElfe = new List<List<int>>
             {
                 new List<int>()
             };
@@ -30,8 +32,13 @@ namespace AoC2022.script
                     }
                 }
             }
-            List<int> listPoids = listElfe.ConvertAll(x => x.Aggregate(0, (total, next) => total + next));
-            return listPoids.Max();
+            listPoids = this.listElfe.ConvertAll(x => x.Aggregate(0, (total, next) => total + next));
+            listPoids.Sort();
+
         }
+
+        public int Part1 => listPoids[^1];
+
+        public int Part2 => listPoids[^3] + listPoids[^2] + listPoids[^1];
     }
 }
