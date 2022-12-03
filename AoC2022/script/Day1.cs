@@ -8,16 +8,12 @@ namespace AoC2022.script
 {
     class Day1
     {
-        private List<List<int>> listElfe;
+        private List<List<int>> listElfe = new List<List<int>> { new List<int>() };
         List<int> listPoids;
 
         public Day1(string addr)
         {
             if (!File.Exists(addr)) this.listElfe = null;
-            this.listElfe = new List<List<int>>
-            {
-                new List<int>()
-            };
             using (StreamReader file = new StreamReader(addr))
             {
                 string ln;

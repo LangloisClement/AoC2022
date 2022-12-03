@@ -15,6 +15,10 @@ namespace AoC2022
             Console.WriteLine("DAY 2 -----------------");
             Console.WriteLine(Day2.part1("../../../input/inputD2.txt"));
             Console.WriteLine(Day2.part2("../../../input/inputD2.txt"));
+            Console.WriteLine("DAY 3 -----------------");
+            Day3 day3 = new Day3("../../../input/inputD3.txt");
+            Console.WriteLine(day3.Part1);
+            
         }
     }
 }
