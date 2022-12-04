@@ -24,7 +24,7 @@ namespace AoC2022.script
             }
         }
 
-        bool overlap(string pair)
+        bool Overlap1(string pair)
         {
             string a = pair.Split(',')[0];
             int startA = int.Parse(a.Split('-')[0]);
@@ -41,6 +41,23 @@ namespace AoC2022.script
 
         }
 
-        public int Part1 => this.listPair.Count(overlap);
+        bool Overlap2(string pair)
+        {
+            string a = pair.Split(',')[0];
+            int startA = int.Parse(a.Split('-')[0]);
+            int endA = int.Parse(a.Split('-')[1]);
+            List<int> ids1 = Enumerable.Range(startA, endA - startA + 1).ToList();
+
+            string b = pair.Split(',')[1];
+            int startB = int.Parse(b.Split('-')[0]);
+            int endB = int.Parse(b.Split('-')[1]);
+            List<int> ids2 = Enumerable.Range(startB, endB - startB + 1).ToList();
+
+            return ids1.Intersect(ids2).Any();
+
+        }
+
+        public int Part1 => this.listPair.Count(Overlap1);
+        public int Part2 => this.listPair.Count(Overlap2);
     }
 }

@@ -22,7 +22,7 @@ namespace AoC2022
             Console.WriteLine("DAY 4 -----------------");
             Day4 day4 = new Day4("../../../input/inputD4.txt");
             Console.WriteLine(day4.Part1);
-            //Console.WriteLine(day3.Part2);
+            Console.WriteLine(day4.Part2);
 
         }
     }
