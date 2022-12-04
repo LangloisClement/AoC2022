@@ -11,7 +11,7 @@ namespace AoC2022.script
 
         public Day3(string addr)
         {
-            if (!File.Exists(addr)) this.listSac = null;
+            if (!File.Exists(addr)) return;
             using (StreamReader file = new StreamReader(addr))
             {
                 string ln;

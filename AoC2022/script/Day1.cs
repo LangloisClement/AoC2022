@@ -13,7 +13,7 @@ namespace AoC2022.script
 
         public Day1(string addr)
         {
-            if (!File.Exists(addr)) this.listElfe = null;
+            if (!File.Exists(addr)) return;
             using (StreamReader file = new StreamReader(addr))
             {
                 string ln;
