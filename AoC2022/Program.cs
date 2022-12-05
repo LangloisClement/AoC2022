@@ -1,5 +1,6 @@
 ﻿using AoC2022.script;
 using System;
+using System.Text.RegularExpressions;
 
 namespace AoC2022
 {
@@ -23,6 +24,18 @@ namespace AoC2022
             Day4 day4 = new Day4("../../../input/inputD4.txt");
             Console.WriteLine(day4.Part1);
             Console.WriteLine(day4.Part2);
+            Console.WriteLine("DAY 5 -----------------");
+
+            string[] test = {
+                "move 1 from 2 to 1",
+                "move 3 from 1 to 3",
+                "move 2 from 2 to 1",
+                "move 1 from 1 to 2"
+            };
+            Regex regex = new Regex(@"move (\d+) from (\d+) to (\d+)");
+            var r= regex.Match(test[0]);
+            Console.WriteLine();
+
 
         }
     }
